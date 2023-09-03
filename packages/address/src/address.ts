@@ -32,7 +32,7 @@ export default class Address extends AbstractAddress {
     this.bech32Address = normalizeBech32(address);
 
     if (!isBech32(this.bech32Address)) {
-      throw new FuelError(FuelError.CODES.INVALID_ADDRESS, `Invalid Bech32 Address: ${address}`);
+      throw new FuelError(FuelError.CODES.INVALID_ADDRESS, 'invalid-bech32', { address });
     }
   }
 
