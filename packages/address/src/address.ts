@@ -32,10 +32,7 @@ export default class Address extends AbstractAddress {
     this.bech32Address = normalizeBech32(address);
 
     if (!isBech32(this.bech32Address)) {
-      throw new FuelError(
-        FuelError.CODES.INVALID_BECH32_ADDRESS,
-        `Invalid Bech32 Address: ${address}`
-      );
+      throw new FuelError(FuelError.CODES.INVALID_ADDRESS, `Invalid Bech32 Address: ${address}`);
     }
   }
 
@@ -200,10 +197,7 @@ export default class Address extends AbstractAddress {
       return Address.fromB256(address);
     }
 
-    throw new FuelError(
-      FuelError.CODES.PARSE_FAILED,
-      'Unknown address format: only Bech32, B256, or Public Key (512) supported'
-    );
+    throw new FuelError(FuelError.CODES.PARSE_FAILED, 'unknown-address-format');
   }
 
   /**

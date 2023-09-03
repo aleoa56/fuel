@@ -3,7 +3,7 @@
  */
 export enum ErrorCode {
   // address
-  INVALID_BECH32_ADDRESS = 'invalid-bech32-address',
+  INVALID_ADDRESS = 'invalid-address',
 
   // provider
   INVALID_URL = 'invalid-url',
@@ -21,6 +21,7 @@ export enum ErrorCode {
   // transaction
   TRANSACTION_FAILED = 'transaction-failed',
 
+  INVALID_MULTICALL = 'invalid-multicall',
   // coder
   // ...
 }
