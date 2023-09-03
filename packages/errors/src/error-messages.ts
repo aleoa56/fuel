@@ -1,19 +1,19 @@
-import type { ErrorCode } from './error-codes';
+import { ErrorCode } from './error-codes';
 
 export const errorMessages = {
-  'insufficient-balance': {},
-  'invalid-address': {
+  [ErrorCode.INSUFFICIENT_BALANCE]: {},
+  [ErrorCode.INVALID_ADDRESS]: {
     'unknown-format': 'Unknown address format: only Bech32, B256, or Public Key (512) supported.',
-    'invalid-bech32': `Invalid Bech32 Address.`,
+    'invalid-bech32': 'Invalid Bech32 Address.',
   },
-  'invalid-url': {},
-  'parse-failed': {
+  [ErrorCode.INVALID_URL]: {},
+  [ErrorCode.PARSE_FAILED]: {
     'missing-code-property': "missing 'code' property.",
     'unknown-error-code': 'Unknown error code.',
     'unknown-message-key': `Unknown message key.`,
   },
-  'transaction-failed': {},
-  'invalid-multicall': {
+  [ErrorCode.TRANSACTION_FAILED]: {},
+  [ErrorCode.INVALID_MULTICALL]: {
     'only-one-call-with-heap-return-allowed.':
       'Only one call that returns a heap type is allowed on a multicall.',
     'call-with-heap-return-must-be-last':
